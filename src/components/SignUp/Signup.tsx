@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import FormikControl from "../../Formik/FormikControl";
 import { InputControlType, SignUpFormValues } from "../../interface/interfaces";
 import SignupImg from "../../assets/signup-image.png";
+import { toast } from "react-hot-toast";
+import ImageUpload from "../../Formik/ImageUpload";
 
 const initialValues: SignUpFormValues = {
   name: "",
@@ -11,6 +13,7 @@ const initialValues: SignUpFormValues = {
   phone: "",
   password: "",
   confirmPassword: "",
+  image: null,
 };
 
 const validationSchema = Yup.object({
@@ -35,10 +38,11 @@ const validationSchema = Yup.object({
 
 const onSubmit = (
   values: SignUpFormValues,
-  { setSubmitting }: FormikHelpers<SignUpFormValues>
+  onSubmitProps: FormikHelpers<SignUpFormValues>
 ) => {
   console.log("Form data", values);
-  setSubmitting(false);
+  toast.success("You have successfully signed in", { duration: 1500 });
+  onSubmitProps.resetForm();
 };
 
 const Signup: React.FC = () => {
@@ -46,7 +50,7 @@ const Signup: React.FC = () => {
     <>
       <div className="flex flex-row justify-center flex-wrap mt-5 mx-5">
         <div className="">
-          <p className="text-5xl font-medium">Sign up</p>
+          <p className="text-5xl font-medium mx-2">Sign up</p>
           <div className="mt-8 mx-2">
             <div className="flex mb-3 justify-center">Photo +</div>
             <Formik
@@ -97,15 +101,16 @@ const Signup: React.FC = () => {
                       placeholder="confirm your password"
                       className="text-sm  px-4 py-3 bg-custom-input border-2  border-gray-200 rounded-lg focus:outline-none focus:border-gray-400"
                     />
+                    <ImageUpload name="photo" />
                     <button
                       type="submit"
-                      className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                      className="bg-blue-500 hover:bg-blue-600 text-white font-normal py-2 px-4 mt-1 rounded"
                     >
                       Submit
                     </button>
                     <button
                       type="reset"
-                      className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 mx-3 rounded"
+                      className="bg-red-500 hover:bg-red-600 text-white font-normal py-2 px-4 mx-3 mt-1 rounded"
                     >
                       Reset
                     </button>

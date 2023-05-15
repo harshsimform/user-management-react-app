@@ -17,6 +17,7 @@ export interface SignUpFormValues {
   phone: string;
   password: string;
   confirmPassword: string;
+  image: null | string;
 }
 
 export interface Props {
@@ -27,6 +28,7 @@ export interface Props {
   options?: { key: string; value: string }[];
   type?: string;
   className?: string;
+  accept?: string;
 }
 
 export interface TextErrorProps {
