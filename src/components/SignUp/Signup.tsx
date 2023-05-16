@@ -5,6 +5,7 @@ import { InputControlType, SignUpFormValues } from "../../interface/interfaces";
 import SignupImg from "../../assets/signup-image.png";
 import { toast } from "react-hot-toast";
 import FileInput from "../../Formik/FileInput";
+import { useNavigate } from "react-router-dom";
 
 const initialValues: SignUpFormValues = {
   name: "",
@@ -20,11 +21,8 @@ const validationSchema = Yup.object({
     .matches(/^[a-zA-Z\s]{15,}$/, "Name must be at least 15 characters long")
     .required("Name is required"),
   email: Yup.string()
-    .email("Your email is invalid")
-    .matches(
-      /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-      "Your email is invalid"
-    )
+    .email("Email is invalid")
+    .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, "Email is invalid")
     .required("Email is required"),
   phone: Yup.string()
     .matches(
@@ -32,25 +30,29 @@ const validationSchema = Yup.object({
       "Please enter valid indian phone number"
     )
     .required("Phone number is required"),
-  password: Yup.string().required("Password is required"),
+  password: Yup.string()
+    .min(8, "Password must be 8 characters long")
+    .required("Password is required"),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), ""], "Passwords does not match")
     .required("Confirm Password is required"),
-  image: Yup.mixed().required("Image is required"), // Add validation for the image field
+  image: Yup.string()
+    .matches(/data:image\/(png|jpg|);base64?/i, "Image must be jpg or png")
+    .required("Photo is required"),
 });
 
-const onSubmit = (
-  values: SignUpFormValues,
-  onSubmitProps: FormikHelpers<SignUpFormValues>
-) => {
-  console.log("Form data", values);
-  console.log(values.image);
-
-  toast.success("You have successfully signed in", { duration: 1500 });
-  onSubmitProps.resetForm();
-};
-
 const Signup: React.FC = () => {
+  const navigate = useNavigate();
+
+  const onSubmit = (
+    values: SignUpFormValues,
+    onSubmitProps: FormikHelpers<SignUpFormValues>
+  ) => {
+    toast.success("You have successfully signed in", { duration: 2000 });
+    onSubmitProps.resetForm();
+    navigate("/home");
+  };
+
   return (
     <>
       <div className="flex flex-row justify-center flex-wrap mt-5 mx-5">

@@ -33,12 +33,7 @@ const FileInput = ({ label, name }: Props) => {
     <>
       <label className="cursor-pointer" htmlFor={name}>
         {label}
-        <input
-          id={name}
-          type="file"
-          onChange={handleFileChange}
-          onBlur={field.onBlur}
-        />
+        <input id={name} type="file" onChange={handleFileChange} />
       </label>
       {selectedImg && (
         <div className="w-[15rem] h-full grid place-items-center">
