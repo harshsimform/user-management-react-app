@@ -1,14 +1,11 @@
 import React from "react";
 import Input from "./Input";
-import { Props } from "../interface/interfaces";
-import ImageUpload from "./ImageUpload";
+import { InputControlType, Props } from "../interface/interfaces";
 
 const FormikControl = ({ control, ...rest }: Props) => {
   switch (control) {
-    case "input":
+    case InputControlType.Input:
       return <Input {...rest} />;
-    case "image":
-      return <ImageUpload {...rest} />;
     default:
       return null;
   }
