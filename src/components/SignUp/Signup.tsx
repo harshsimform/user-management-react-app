@@ -6,6 +6,8 @@ import SignupImg from "../../assets/signup-image.png";
 import { toast } from "react-hot-toast";
 import FileInput from "../../Formik/FileInput";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/store";
+import { addUser } from "../../redux/SignupSlice/SignupSlice";
 
 const initialValues: SignUpFormValues = {
   name: "",
@@ -13,7 +15,7 @@ const initialValues: SignUpFormValues = {
   phone: "",
   password: "",
   confirmPassword: "",
-  image: null,
+  image: "",
 };
 
 const validationSchema = Yup.object({
@@ -42,6 +44,7 @@ const validationSchema = Yup.object({
 });
 
 const Signup: React.FC = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const onSubmit = (
@@ -51,6 +54,7 @@ const Signup: React.FC = () => {
     toast.success("You have successfully signed in", { duration: 2000 });
     onSubmitProps.resetForm();
     navigate("/home");
+    dispatch(addUser(values));
   };
 
   return (
