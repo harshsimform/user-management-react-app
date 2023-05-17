@@ -3,14 +3,6 @@ export interface IOption {
   value: string;
 }
 
-export interface IFormValues {
-  email: string;
-  description: string;
-  selectOption: string;
-  radioOption: string;
-  checkboxOption: string[];
-}
-
 export interface SignUpFormValues {
   name: string;
   email: string;

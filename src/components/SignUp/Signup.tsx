@@ -51,7 +51,7 @@ const Signup: React.FC = () => {
     values: SignUpFormValues,
     onSubmitProps: FormikHelpers<SignUpFormValues>
   ) => {
-    toast.success("You have successfully signed in", { duration: 2000 });
+    toast.success("You have successfully signed in", { duration: 3000 });
     onSubmitProps.resetForm();
     navigate("/home");
     dispatch(addUser(values));
@@ -116,7 +116,7 @@ const Signup: React.FC = () => {
                     />
                     <button
                       type="submit"
-                      className="bg-blue-500 hover:bg-blue-600 text-white border-none outline-none font-normal py-2 px-4 mt-1 rounded"
+                      className="bg-blue-500 hover:bg-blue-600 text-white border-none outline-none font-normal py-2 px-4 mt-1 mb-10 rounded"
                     >
                       Submit
                     </button>
