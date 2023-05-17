@@ -4,12 +4,12 @@ export interface IOption {
 }
 
 export interface SignUpFormValues {
-  name: string;
+  name?: string;
   email: string;
-  phone: string;
+  phone?: string;
   password: string;
-  confirmPassword: string;
-  image: string | undefined;
+  confirmPassword?: string;
+  image?: string | undefined;
 }
 
 export interface Props {

@@ -13,7 +13,7 @@ const initialState: UserState = {
 };
 
 const SignupSlice = createSlice({
-  name: "signup",
+  name: "userAuth",
   initialState,
   reducers: {
     addUser: (state, action: PayloadAction<SignUpFormValues>) => {
@@ -24,7 +24,7 @@ const SignupSlice = createSlice({
       state.isLoggedIn = action.payload;
     },
     logout: (state) => {
-      state.users = null;
+      // state.users = null;
       state.isLoggedIn = false;
     },
   },

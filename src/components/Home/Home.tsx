@@ -15,10 +15,13 @@ const Home = () => {
   };
   return (
     <>
-      <div className="w-full bg-gradient-to-br from-indigo-200 to-indigo-400">
-        <nav id="header" className="bg-white shadow-lg">
+      <div className="w-full bg-gray-100">
+        <nav
+          id="header"
+          className="bg-gradient-to-br from-indigo-400 to-indigo-500 shadow-lg"
+        >
           <div className="w-full flex items-center justify-between mt-0 px-2 py-2">
-            <div className="flex items-center justify-start px-4 py-2 font-medium text-lg text-indigo-400">
+            <div className="flex items-center justify-start px-4 py-2 font-medium text-lg text-white">
               User Management System
             </div>
             <div
@@ -42,7 +45,6 @@ const Home = () => {
               <img
                 className="mb-3 w-32 h-32 rounded-full shadow-lg mx-auto bg-gray-300"
                 src={SignedUserData.image}
-                alt="product designer"
               />
               <h1 className="text-lg text-gray-700">{SignedUserData.name}</h1>
               <h3 className="text-sm text-gray-400 ">{SignedUserData.email}</h3>
