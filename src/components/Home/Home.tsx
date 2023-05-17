@@ -25,10 +25,10 @@ const Home = () => {
               User Management System
             </div>
             <div
-              className="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4"
+              className="flex flex-wrap items-center justify-end mr-4"
               id="nav-content"
             >
-              <div className="auth flex items-center w-full md:w-full">
+              <div className="flex items-center w-full md:w-full">
                 <button
                   className="bg-indigo-500 shadow-lg rounded-lg font-medium text-white h-[2.5rem] w-[7rem]"
                   onClick={logoutHandler}
