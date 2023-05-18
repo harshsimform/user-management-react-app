@@ -23,7 +23,7 @@ export interface Props {
 }
 
 export interface TextErrorProps {
-  children?: React.ReactNode;
+  children?: string;
 }
 
 export enum InputControlType {

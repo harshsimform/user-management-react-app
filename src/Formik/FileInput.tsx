@@ -9,8 +9,8 @@ const FileInput = ({ label, name }: Props) => {
   const handleFileChange = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const file = event.currentTarget.files && event.currentTarget.files[0];
-    console.log(file?.type);
+    const file: File | null =
+      event.currentTarget.files && event.currentTarget.files[0];
 
     if (file) {
       const reader = new FileReader();

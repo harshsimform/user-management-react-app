@@ -43,7 +43,6 @@ const Login: React.FC = () => {
         onSubmitProps.resetForm();
 
         navigate("/home");
-        console.log(userData);
       } else {
         toast.error("Invalid email or password");
       }

@@ -9,8 +9,6 @@ import Login from "./components/Login/Login";
 
 const App = () => {
   const isAuthenticated = useAppSelector(isUserAuthenticated);
-
-  console.log(isAuthenticated);
   return (
     <>
       <BrowserRouter>
