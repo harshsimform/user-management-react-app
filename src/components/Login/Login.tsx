@@ -47,6 +47,8 @@ const Login: React.FC = () => {
       } else {
         toast.error("Invalid email or password");
       }
+    } else {
+      toast.error("User does not exist");
     }
   };
 
