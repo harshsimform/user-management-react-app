@@ -158,7 +158,7 @@ const Signup: React.FC = () => {
                 </Formik>
               </div>
             </div>
-            <div className="signupImg flex items-center">
+            <div className="userImg SignupImg flex items-center LoginImg mb-10">
               <img className="w-full h-[30rem]" src={SignupImg} />
             </div>
           </div>

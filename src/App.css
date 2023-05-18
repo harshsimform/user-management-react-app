@@ -25,10 +25,10 @@ input[type="file"] {
 @media (max-width: 1000px) {
   .Signup,
   .Login {
-    margin-top: 20px;
+    margin-top: 5rem;
   }
-  .signupImg > img {
-    margin-top: 2rem;
+  .userImg > img {
+    margin-top: 1rem;
   }
 }
 
@@ -37,5 +37,13 @@ input[type="file"] {
   input[type="email"],
   input[type="password"] {
     max-width: 300px;
+  }
+
+  .LoginImg > img {
+    width: 20rem;
+  }
+
+  .SignupImg > img {
+    height: 20rem;
   }
 }

@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../redux/store";
 import { setLoggedIn } from "../../redux/SignupSlice/SignupSlice";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import SignupImg from "/assets/user-login.png";
+import LoginImg from "/assets/user-login.png";
 
 const initialValues: SignUpFormValues = {
   email: "",
@@ -114,8 +114,8 @@ const Login: React.FC = () => {
               </Formik>
             </div>
           </div>
-          <div className="signupImg">
-            <img className="max-w-[30rem]" src={SignupImg} />
+          <div className="userImg LoginImg">
+            <img className="max-w-[30rem]" src={LoginImg} />
           </div>
         </div>
       </div>
