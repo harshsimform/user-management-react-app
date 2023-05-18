@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { logout, SignupUserData } from "../../redux/SignupSlice/SignupSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { toast } from "react-hot-toast";
@@ -30,7 +29,7 @@ const Home = () => {
             >
               <div className="flex items-center w-full md:w-full">
                 <button
-                  className="bg-indigo-500 shadow-lg rounded-lg font-medium text-white h-[2.5rem] w-[7rem]"
+                  className="bg-white shadow-lg rounded-lg font-medium text-indigo-600 h-[2.5rem] w-[7rem]"
                   onClick={logoutHandler}
                 >
                   Logout
